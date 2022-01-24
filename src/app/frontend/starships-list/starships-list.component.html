@@ -1,0 +1,33 @@
+<h3 *ngIf="this.loading">Loading Starships...</h3>
+<div *ngFor="let item of this.data.results" class="list">
+    <ngb-accordion #a="ngbAccordion" activeIds="custom-panel-1">
+        <ngb-panel id="custom-panel-1">
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <h3 class="m-0">{{item.name}}</h3>
+              <button ngbPanelToggle class="btn btn-link p-0">Toggle</button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <h5 class="content">Modelr: {{item.model}}</h5>
+            <h5 class="content">Starship class: {{item.starship_class}} cm</h5>
+            <h5 class="content">Manufacturer : {{item.manufacturer }} kg</h5>
+            <br>
+            <h5 class="content">Cost in credits : {{item.cost_in_credits }}</h5>
+            <h5 class="content">Length: {{item.length}}</h5>
+            <h5 class="content">Crew : {{item.crew }}</h5>
+            <h5 class="content">passengers : {{item.passengers }}</h5>
+            <br>
+            <h5 class="content">Max atmosphering speed: {{item.max_atmosphering_speed}}</h5>
+            <h5 class="content">Hyperdrive rating : {{item.hyperdrive_rating }}</h5>
+            <h5 class="content">MGLT : {{item.species}}</h5>
+            <h5 class="content">Starships: {{item.MGLT }}</h5>
+            <h5 class="content">Cargo capacity : {{item.cargo_capacity }}</h5>
+            <h5 class="content">Consumables : {{item.consumables }}</h5>
+            <h5 class="content">Films : {{item.films }}</h5>
+            <h5 class="content">Pilots : {{item.pilots }}</h5>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+</div>
+<label class="btn btn-primary btn-block btn-lg" *ngIf="this.isButtonVisible" (click)="loadNextPage()" ngbButtonLabel>Load Next Page</label>

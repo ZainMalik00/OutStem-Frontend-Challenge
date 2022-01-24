@@ -1,0 +1,30 @@
+<h3 *ngIf="this.loading">Loading Planets...</h3>
+<div *ngFor="let item of this.data.results" class="list">
+    <ngb-accordion #a="ngbAccordion" activeIds="custom-panel-1">
+        <ngb-panel id="custom-panel-1">
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <h3 class="m-0">{{item.name}}</h3>
+              <button ngbPanelToggle class="btn btn-link p-0">Toggle</button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <h5 class="content">Classification: {{item.classification}}</h5>
+            <h5 class="content">Diameter: {{item.diameter}} km</h5>
+            <h5 class="content">Rotation period: {{item.rotation_period}} hours</h5>
+            <h5 class="content">Orbital period: {{item.orbital_period}} days</h5>
+            <br>
+            <h5 class="content">Gravity: {{item.gravity}} Gs</h5>
+            <h5 class="content">Population: {{item.population}}</h5>
+            <h5 class="content">Climate: {{item.climate}}</h5>
+            <h5 class="content">Terrain: {{item.terrain}}</h5>
+            <h5 class="content">Surface water: {{item.surface_water}}</h5>
+            <br>
+            <h5 class="content">Residents: {{item.residents}}</h5>
+            <h5 class="content">Films: {{item.films}}</h5>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+</div>
+<label class="btn btn-primary btn-block btn-lg" *ngIf="this.isButtonVisible" (click)="loadNextPage()" ngbButtonLabel>Load Next Page</label>
+      

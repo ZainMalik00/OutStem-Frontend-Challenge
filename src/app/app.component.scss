@@ -1,0 +1,38 @@
+$primary: yellow;
+$danger: red;
+body {
+    min-height: 100vh;
+    height: auto;
+    background-image: url("../assets/background.jpg");
+    background-size: 100%;
+    background-repeat: repeat;
+}
+#parent-body-style {
+    text-align: center; 
+}
+
+#child-body-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    min-height: 95vh;
+    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.7);
+    background-repeat: repeat;
+    display: inline-block;
+}
+
+#title {
+    color: yellow;
+    font-weight: bold;
+    font-size: 72px;;
+}
+
+.btn-primary {
+    font-weight: bold;
+    font-size: 48px;
+    margin-bottom: 1rem;
+}
+
+@import "bootstrap";

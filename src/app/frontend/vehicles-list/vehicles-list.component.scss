@@ -1,0 +1,18 @@
+.list {
+    max-width: 150vh;;
+}
+
+.content {
+    align-content: left;
+    text-align: left;
+}
+
+.btn-primary {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+$primary: black;
+$danger: red;
+
+@import "bootstrap";
